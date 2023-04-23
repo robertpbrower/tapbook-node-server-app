@@ -3,6 +3,7 @@ import session from "express-session";
 import cors from 'cors'
 import UsersController from "./controllers/users/users-controller.js";
 import mongoose from "mongoose";
+import ReviewsController from "./controllers/reviews/reviews-controller.js";
 
 // const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
 //   || 'mongodb://127.0.0.1:27017/tuiter'
@@ -27,4 +28,5 @@ app.use(
 mongoose.connect(CONNECTION_STRING);
 app.use(express.json());
 UsersController(app);
+ReviewsController(app);
 app.listen(process.env.PORT || 4000)
